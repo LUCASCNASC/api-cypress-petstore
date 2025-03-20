@@ -41,7 +41,7 @@ describe('API Test - POST /pet', () => {
 
     cy.request({
       method: 'POST',
-      url: '/pet',
+      url: '/pet/addPet',
       body: requestBody,
       headers: {
         'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ describe('API Test - POST /pet', () => {
 
     cy.request({
       method: 'POST',
-      url: '/pet',
+      url: '/pet/addPet',
       failOnStatusCode: false,
       body: invalidRequestBody,
       headers: {
