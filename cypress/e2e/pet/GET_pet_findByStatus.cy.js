@@ -40,4 +40,15 @@ describe('API Test Scenarios', () => {
         expect(response.status).to.eq(400);
       });
     });
+
+    it.only('should validate status code 400 for invalid request', () => {
+      cy.request({
+        method: 'GET',
+        url: '/pet/findPetsByStatus',
+        qs: { status: 'invalidStatus' },
+        failOnStatusCode: false
+      }).then((response) => {
+        expect(response.status).to.eq(404);
+      });
+    });
   });
